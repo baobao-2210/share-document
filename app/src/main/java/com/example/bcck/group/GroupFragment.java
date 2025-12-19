@@ -18,6 +18,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bcck.Chat.ChatActivity;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import com.example.bcck.HomeActivity;
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
 import com.example.bcck.R;
 
 import java.util.ArrayList;
@@ -96,9 +103,26 @@ public class GroupFragment extends Fragment {
 
     private void setupButtons() {
         btnBack.setOnClickListener(v -> {
+<<<<<<< HEAD
             // Quay lại màn hình trước
             if (getActivity() != null) {
                 getActivity().onBackPressed();
+=======
+<<<<<<< HEAD
+            // Thay 'MainActivity.class' bằng tên file Activity trang chủ của bạn
+            Intent intent = new Intent(getActivity(), HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
+            // Đóng Activity chứa Fragment hiện tại (nếu cần)
+            if (getActivity() != null) {
+                getActivity().finish();
+=======
+            // Quay lại màn hình trước
+            if (getActivity() != null) {
+                getActivity().onBackPressed();
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
             }
         });
 

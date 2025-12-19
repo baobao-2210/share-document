@@ -12,7 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+<<<<<<< HEAD
         <!-- Header -->
+=======
+<<<<<<< HEAD
+=======
+        <!-- Header -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/headerLayout"
             android:layout_width="0dp"
@@ -23,7 +30,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+<<<<<<< HEAD
             <!-- Back Button -->
+=======
+<<<<<<< HEAD
+=======
+            <!-- Back Button -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
             <ImageView
                 android:id="@+id/btnBack"
                 android:layout_width="40dp"
@@ -36,7 +50,14 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
+<<<<<<< HEAD
             <!-- Title -->
+=======
+<<<<<<< HEAD
+=======
+            <!-- Title -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="0dp"
@@ -51,8 +72,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
+<<<<<<< HEAD
             <!-- Settings Button -->
 
+=======
+<<<<<<< HEAD
+=======
+            <!-- Settings Button -->
+
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
             <ImageView
                 android:id="@+id/btnSettings"
                 android:layout_width="31dp"
@@ -66,11 +95,24 @@
                 app:layout_constraintVertical_bias="0.0"
                 app:tint="@android:color/white" />
 
+<<<<<<< HEAD
          
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Profile Card -->
+=======
+<<<<<<< HEAD
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+=======
+         
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Profile Card -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         <androidx.cardview.widget.CardView
             android:id="@+id/profileCard"
             android:layout_width="0dp"
@@ -90,7 +132,14 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp">
 
+<<<<<<< HEAD
                 <!-- Avatar with Camera Icon -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Avatar with Camera Icon -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.cardview.widget.CardView
                     android:id="@+id/avatarCard"
                     android:layout_width="100dp"
@@ -106,7 +155,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+<<<<<<< HEAD
                         <!-- Avatar Icon -->
+=======
+<<<<<<< HEAD
+=======
+                        <!-- Avatar Icon -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         <ImageView
                             android:id="@+id/imgAvatar"
                             android:layout_width="60dp"
@@ -118,7 +174,14 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:tint="@android:color/white" />
 
+<<<<<<< HEAD
                         <!-- Camera Icon -->
+=======
+<<<<<<< HEAD
+=======
+                        <!-- Camera Icon -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         <ImageView
                             android:id="@+id/btnEditAvatar"
                             android:layout_width="32dp"
@@ -130,7 +193,24 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:tint="#5B5FC7" />
 
+<<<<<<< HEAD
                         <!-- Username Badge -->
+=======
+<<<<<<< HEAD
+                        <ProgressBar
+                            android:id="@+id/progressBarAvatar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminateTint="@android:color/white"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+=======
+                        <!-- Username Badge -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -149,7 +229,14 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
+<<<<<<< HEAD
                 <!-- User Info -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- User Info -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -159,14 +246,29 @@
                     app:layout_constraintStart_toEndOf="@id/avatarCard"
                     app:layout_constraintTop_toTopOf="parent">
 
+<<<<<<< HEAD
                     <!-- Họ và tên -->
+=======
+<<<<<<< HEAD
+=======
+                    <!-- Họ và tên -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                     <TextView
                         android:id="@+id/tvName"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:background="@android:color/white"
                         android:padding="8dp"
+<<<<<<< HEAD
                         android:text="Họ và tên : Nguyễn Tấn Bảo"
+=======
+<<<<<<< HEAD
+                        android:text="Họ và tên : ..."
+=======
+                        android:text="Họ và tên : Nguyễn Tấn Bảo"
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         android:textColor="#000080"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -174,7 +276,14 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< HEAD
                     <!-- Lớp -->
+=======
+<<<<<<< HEAD
+=======
+                    <!-- Lớp -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                     <TextView
                         android:id="@+id/tvClass"
                         android:layout_width="0dp"
@@ -182,7 +291,15 @@
                         android:layout_marginTop="4dp"
                         android:background="@android:color/white"
                         android:padding="8dp"
+<<<<<<< HEAD
                         android:text="Lớp :      "
+=======
+<<<<<<< HEAD
+                        android:text="Lớp : ..."
+=======
+                        android:text="Lớp :      "
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         android:textColor="#000080"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -190,7 +307,14 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvName" />
 
+<<<<<<< HEAD
                     <!-- Khoa -->
+=======
+<<<<<<< HEAD
+=======
+                    <!-- Khoa -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                     <TextView
                         android:id="@+id/tvDepartment"
                         android:layout_width="0dp"
@@ -198,7 +322,15 @@
                         android:layout_marginTop="4dp"
                         android:background="@android:color/white"
                         android:padding="8dp"
+<<<<<<< HEAD
                         android:text="Khoa : "
+=======
+<<<<<<< HEAD
+                        android:text="Khoa : ..."
+=======
+                        android:text="Khoa : "
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         android:textColor="#000080"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -206,7 +338,14 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvClass" />
 
+<<<<<<< HEAD
                     <!-- Khóa -->
+=======
+<<<<<<< HEAD
+=======
+                    <!-- Khóa -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                     <TextView
                         android:id="@+id/tvYear"
                         android:layout_width="0dp"
@@ -214,7 +353,15 @@
                         android:layout_marginTop="4dp"
                         android:background="@android:color/white"
                         android:padding="8dp"
+<<<<<<< HEAD
                         android:text="Khóa : 2023"
+=======
+<<<<<<< HEAD
+                        android:text="Khóa : ..."
+=======
+                        android:text="Khóa : 2023"
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         android:textColor="#000080"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -222,7 +369,14 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvDepartment" />
 
+<<<<<<< HEAD
                     <!-- Email -->
+=======
+<<<<<<< HEAD
+=======
+                    <!-- Email -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                     <TextView
                         android:id="@+id/tvEmail"
                         android:layout_width="0dp"
@@ -230,7 +384,15 @@
                         android:layout_marginTop="4dp"
                         android:background="@android:color/white"
                         android:padding="8dp"
+<<<<<<< HEAD
                         android:text="Email : XXXXX@gmail.com"
+=======
+<<<<<<< HEAD
+                        android:text="Email : ..."
+=======
+                        android:text="Email : XXXXX@gmail.com"
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                         android:textColor="#000080"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -243,7 +405,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
+<<<<<<< HEAD
         <!-- Menu Card 1 -->
+=======
+<<<<<<< HEAD
+=======
+        <!-- Menu Card 1 -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         <androidx.cardview.widget.CardView
             android:id="@+id/menuCard1"
             android:layout_width="0dp"
@@ -264,7 +433,14 @@
                 android:orientation="vertical"
                 android:padding="8dp">
 
+<<<<<<< HEAD
                 <!-- Tài liệu -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Tài liệu -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnDocuments"
                     android:layout_width="match_parent"
@@ -299,7 +475,14 @@
                     android:layout_height="1dp"
                     android:background="#E0E0E0" />
 
+<<<<<<< HEAD
                 <!-- Bài đăng -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Bài đăng -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnPosts"
                     android:layout_width="match_parent"
@@ -334,7 +517,14 @@
                     android:layout_height="1dp"
                     android:background="#E0E0E0" />
 
+<<<<<<< HEAD
                 <!-- Thư viện của tôi -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Thư viện của tôi -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnLibrary"
                     android:layout_width="match_parent"
@@ -369,7 +559,14 @@
                     android:layout_height="1dp"
                     android:background="#E0E0E0" />
 
+<<<<<<< HEAD
                 <!-- Lịch sử tải xuống -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Lịch sử tải xuống -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnDownloadHistory"
                     android:layout_width="match_parent"
@@ -404,7 +601,14 @@
                     android:layout_height="1dp"
                     android:background="#E0E0E0" />
 
+<<<<<<< HEAD
                 <!-- Tài liệu của tôi -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Tài liệu của tôi -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnMyDocuments"
                     android:layout_width="match_parent"
@@ -437,7 +641,14 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+<<<<<<< HEAD
         <!-- Menu Card 2 -->
+=======
+<<<<<<< HEAD
+=======
+        <!-- Menu Card 2 -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         <androidx.cardview.widget.CardView
             android:id="@+id/menuCard2"
             android:layout_width="0dp"
@@ -458,7 +669,14 @@
                 android:orientation="vertical"
                 android:padding="8dp">
 
+<<<<<<< HEAD
                 <!-- Cập nhật thông tin tài khoản -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Cập nhật thông tin tài khoản -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnUpdateInfo"
                     android:layout_width="match_parent"
@@ -493,7 +711,14 @@
                     android:layout_height="1dp"
                     android:background="#E0E0E0" />
 
+<<<<<<< HEAD
                 <!-- Bảo mật và quyền riêng tư -->
+=======
+<<<<<<< HEAD
+=======
+                <!-- Bảo mật và quyền riêng tư -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btnSecurity"
                     android:layout_width="match_parent"
@@ -526,7 +751,14 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+<<<<<<< HEAD
         <!-- University Image -->
+=======
+<<<<<<< HEAD
+=======
+        <!-- University Image -->
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         <ImageView
             android:id="@+id/imgUniversity"
             android:layout_width="0dp"

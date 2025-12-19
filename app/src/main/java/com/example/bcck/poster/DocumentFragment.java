@@ -19,6 +19,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+import com.example.bcck.Home.NotificationActivity;
+import com.example.bcck.HomeActivity;
+import com.example.bcck.Profile.ProfileActivity;
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
 import com.example.bcck.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,7 +44,15 @@ public class DocumentFragment extends Fragment {
     private List<Document> filteredDocumentList;
 
     private EditText searchBox;
+<<<<<<< HEAD
     private ImageView iconNotification, iconProfile;
+=======
+<<<<<<< HEAD
+    private ImageView logoIcon, iconNotification, iconProfile;
+=======
+    private ImageView iconNotification, iconProfile;
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
     private CardView btnUpload;
     private FirebaseFirestore db;
 
@@ -60,6 +78,13 @@ public class DocumentFragment extends Fragment {
         iconNotification = view.findViewById(R.id.iconNotification);
         iconProfile = view.findViewById(R.id.iconProfile);
         btnUpload = view.findViewById(R.id.btnUpload);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        logoIcon = view.findViewById(R.id.logoIcon);
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         db = FirebaseFirestore.getInstance();
 
     }
@@ -119,6 +144,31 @@ public class DocumentFragment extends Fragment {
     }
 
     private void setupButtons() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        // 1. Xử lý nút Thông Báo (Bell)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+        iconNotification.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Thông báo", Toast.LENGTH_SHORT).show();
+            // TODO: Mở màn hình thông báo
+        });
+
+        iconProfile.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Cá nhân", Toast.LENGTH_SHORT).show();
+            // TODO: Chuyển sang tab Cá nhân
+        });
+
+        // --- Sửa đoạn code này để thêm thao tác chuyển màn hình ---
+        btnUpload.setOnClickListener(v -> {
+            // Mở Activity Tải lên Tài liệu
+            Intent intent = new Intent(requireContext(), UploadDocumentActivity.class);
+            startActivity(intent);
+<<<<<<< HEAD
+
+            // Chú ý: Bạn cần đảm bảo đã tạo UploadDocumentActivity và nó đã được khai báo trong AndroidManifest.xml
+=======
+=======
         iconNotification.setOnClickListener(v -> {
             Toast.makeText(getContext(), "Thông báo", Toast.LENGTH_SHORT).show();
             // TODO: Mở màn hình thông báo
@@ -136,6 +186,8 @@ public class DocumentFragment extends Fragment {
             startActivity(intent);
 
             // Chú ý: Bạn cần đảm bảo đã tạo UploadDocumentActivity và nó đã được khai báo trong AndroidManifest.xml
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         });
     }
 

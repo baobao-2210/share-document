@@ -49,6 +49,14 @@ dependencies {
     implementation("com.google.firebase:firebase-storage")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
 
 
 }

@@ -491,14 +491,20 @@
             app:layout_constraintStart_toEndOf="@id/btnPopular"
             app:layout_constraintTop_toTopOf="@id/btnAll" />
 
+<<<<<<< HEAD
         <!-- PDF Items -->
         <androidx.cardview.widget.CardView
             android:id="@+id/pdfItem1"
+=======
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewHomeDocuments"
+>>>>>>> 21ea585 (update button)
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginTop="16dp"
+<<<<<<< HEAD
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             android:backgroundTint="#5B5FC7"
@@ -673,3 +679,14 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+=======
+            android:layout_marginBottom="16dp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnAll"
+            tools:listitem="@layout/item_document" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+>>>>>>> 21ea585 (update button)
