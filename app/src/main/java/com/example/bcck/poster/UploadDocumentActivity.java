@@ -15,11 +15,15 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.bcck.R;
+<<<<<<< HEAD
 import com.example.bcck.poster.Document;
+=======
+>>>>>>> 21ea585 (update button)
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+<<<<<<< HEAD
 
 import org.json.JSONObject;
 
@@ -32,6 +36,12 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+=======
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.Locale;
+>>>>>>> 21ea585 (update button)
 
 public class UploadDocumentActivity extends AppCompatActivity {
 
@@ -86,7 +96,11 @@ public class UploadDocumentActivity extends AppCompatActivity {
 
         btnUpload.setOnClickListener(v -> {
             if (validateForm()) {
+<<<<<<< HEAD
                 uploadFileToCloudinary();
+=======
+                uploadFileToFirebaseStorage();
+>>>>>>> 21ea585 (update button)
             }
         });
     }
@@ -155,6 +169,7 @@ public class UploadDocumentActivity extends AppCompatActivity {
         return true;
     }
 
+<<<<<<< HEAD
     // ================= CLOUDINARY UPLOAD =================
 
     private void uploadFileToCloudinary() {
@@ -224,6 +239,47 @@ public class UploadDocumentActivity extends AppCompatActivity {
                 );
             }
         }).start();
+=======
+    // ================= FIREBASE STORAGE UPLOAD =================
+
+    private void uploadFileToFirebaseStorage() {
+        if (selectedFileUri == null) {
+            Toast.makeText(this, "Bạn chưa chọn tệp!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String userId = auth.getCurrentUser() != null ? auth.getCurrentUser().getUid() : "unknown";
+
+        String safeName = sanitizeFileName(selectedFileName);
+        String path = "documents/" + userId + "/" + System.currentTimeMillis() + "_" + safeName;
+
+        StorageReference ref = FirebaseStorage.getInstance().getReference().child(path);
+
+        Toast.makeText(this, "Đang tải lên file...", Toast.LENGTH_SHORT).show();
+
+        ref.putFile(selectedFileUri)
+                .addOnSuccessListener(taskSnapshot ->
+                        ref.getDownloadUrl()
+                                .addOnSuccessListener(uri -> saveDocumentInfoToFirestore(uri.toString()))
+                                .addOnFailureListener(e ->
+                                        Toast.makeText(this, "Lấy link file lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show()
+                                )
+                )
+                .addOnFailureListener(e ->
+                        Toast.makeText(this, "Upload Firebase thất bại: " + e.getMessage(), Toast.LENGTH_LONG).show()
+                );
+    }
+
+    private String sanitizeFileName(String input) {
+        String safe = (input == null || input.trim().isEmpty()) ? "document.pdf" : input.trim();
+        safe = safe.replaceAll("[\\\\/:*?\"<>|\\n\\r\\t]", "_");
+        safe = safe.replaceAll("\\s+", " ");
+        if (!safe.toLowerCase(Locale.ROOT).endsWith(".pdf")) {
+            safe += ".pdf";
+        }
+        return safe;
+>>>>>>> 21ea585 (update button)
     }
 
     // ================= FIRESTORE =================

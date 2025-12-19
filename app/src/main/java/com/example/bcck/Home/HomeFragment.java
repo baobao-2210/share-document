@@ -12,8 +12,26 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+<<<<<<< HEAD
 
 import com.example.bcck.R;
+=======
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.bcck.R;
+import com.example.bcck.data.DocumentSort;
+import com.example.bcck.data.FirestoreDocumentRepository;
+import com.example.bcck.data.SampleDocumentsSeeder;
+import com.example.bcck.poster.Document;
+import com.example.bcck.poster.DocumentAdapter;
+import com.example.bcck.poster.DocumentDetailActivity;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
+import android.content.pm.ApplicationInfo;
+>>>>>>> 21ea585 (update button)
 
 public class HomeFragment extends Fragment {
 
@@ -23,8 +41,17 @@ public class HomeFragment extends Fragment {
     // Filter Buttons
     private Button btnAll, btnPopular, btnNewest;
 
+<<<<<<< HEAD
     // PDF Items
     private CardView pdfItem1, pdfItem2, pdfItem3;
+=======
+    private RecyclerView recyclerViewHomeDocuments;
+    private DocumentAdapter documentAdapter;
+    private final List<Document> homeDocuments = new ArrayList<>();
+    private ImageView addIcon;
+
+    private final FirestoreDocumentRepository documentRepository = new FirestoreDocumentRepository();
+>>>>>>> 21ea585 (update button)
 
     @Nullable
     @Override
@@ -45,7 +72,13 @@ public class HomeFragment extends Fragment {
         // Các hàm setup có sẵn
         setupCloudStorageCards();
         setupFilterButtons();
+<<<<<<< HEAD
         setupPdfItems();
+=======
+        setupRecyclerView();
+        setupSeedButton();
+        loadTopDocuments(DocumentSort.ALL);
+>>>>>>> 21ea585 (update button)
 
         return view;
     }
@@ -62,10 +95,15 @@ public class HomeFragment extends Fragment {
         btnPopular = view.findViewById(R.id.btnPopular);
         btnNewest = view.findViewById(R.id.btnNewest);
 
+<<<<<<< HEAD
         // PDF Items
         pdfItem1 = view.findViewById(R.id.pdfItem1);
         pdfItem2 = view.findViewById(R.id.pdfItem2);
         pdfItem3 = view.findViewById(R.id.pdfItem3);
+=======
+        addIcon = view.findViewById(R.id.addIcon);
+        recyclerViewHomeDocuments = view.findViewById(R.id.recyclerViewHomeDocuments);
+>>>>>>> 21ea585 (update button)
     }
 
     private void setupCloudStorageCards() {
@@ -99,21 +137,33 @@ public class HomeFragment extends Fragment {
         btnAll.setOnClickListener(v -> {
             selectFilterButton(btnAll);
             Toast.makeText(getContext(), "Hiển thị tất cả tài liệu", Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD
             // TODO: Load all documents
+=======
+            loadTopDocuments(DocumentSort.ALL);
+>>>>>>> 21ea585 (update button)
         });
 
         // Button Phổ Biến
         btnPopular.setOnClickListener(v -> {
             selectFilterButton(btnPopular);
             Toast.makeText(getContext(), "Hiển thị tài liệu phổ biến", Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD
             // TODO: Load popular documents
+=======
+            loadTopDocuments(DocumentSort.POPULAR);
+>>>>>>> 21ea585 (update button)
         });
 
         // Button Mới Nhất
         btnNewest.setOnClickListener(v -> {
             selectFilterButton(btnNewest);
             Toast.makeText(getContext(), "Hiển thị tài liệu mới nhất", Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD
             // TODO: Load newest documents
+=======
+            loadTopDocuments(DocumentSort.NEWEST);
+>>>>>>> 21ea585 (update button)
         });
     }
 
@@ -133,6 +183,7 @@ public class HomeFragment extends Fragment {
         selectedButton.setTextColor(0xFFFFFFFF);
     }
 
+<<<<<<< HEAD
     private void setupPdfItems() {
         // PDF Item 1 Click
         pdfItem1.setOnClickListener(v -> {
@@ -171,3 +222,85 @@ public class HomeFragment extends Fragment {
 
 
 }
+=======
+    private void setupRecyclerView() {
+        recyclerViewHomeDocuments.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        documentAdapter = new DocumentAdapter(homeDocuments, new DocumentAdapter.OnDocumentClickListener() {
+            @Override
+            public void onDocumentClick(Document document) {
+                openDocumentDetail(document);
+            }
+
+            @Override
+            public void onMoreClick(Document document) {
+                Toast.makeText(getContext(), "Options cho: " + document.getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        recyclerViewHomeDocuments.setAdapter(documentAdapter);
+    }
+
+    private void setupSeedButton() {
+        if (addIcon == null) return;
+
+        addIcon.setOnClickListener(v -> {
+            boolean isDebuggable = false;
+            if (getContext() != null) {
+                int flags = getContext().getApplicationInfo().flags;
+                isDebuggable = (flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+            }
+
+            if (!isDebuggable) {
+                Toast.makeText(getContext(), "Chức năng này chỉ bật trong debug.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Toast.makeText(getContext(), "Đang tạo dữ liệu mẫu CNTT...", Toast.LENGTH_SHORT).show();
+            SampleDocumentsSeeder.seedComputerSciencePdfs(FirebaseFirestore.getInstance(), new SampleDocumentsSeeder.SeedCallback() {
+                @Override
+                public void onSuccess(int upsertedCount) {
+                    if (!isAdded()) return;
+                    Toast.makeText(getContext(), "Đã tạo " + upsertedCount + " tài liệu mẫu.", Toast.LENGTH_SHORT).show();
+                    // Sample mới seed có uploadTimestamp mới nhất -> chuyển sang "Mới Nhất" để dễ thấy ngay trên đầu list.
+                    selectFilterButton(btnNewest);
+                    loadTopDocuments(DocumentSort.NEWEST);
+                }
+
+                @Override
+                public void onError(@NonNull Exception error) {
+                    if (!isAdded()) return;
+                    Toast.makeText(getContext(), "Tạo dữ liệu mẫu lỗi: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+        });
+    }
+
+    private void loadTopDocuments(@NonNull DocumentSort sort) {
+        documentRepository.loadTopDocuments(sort, 30, new FirestoreDocumentRepository.LoadDocumentsCallback() {
+            @Override
+            public void onSuccess(@NonNull List<Document> documents) {
+                if (!isAdded()) return;
+
+                homeDocuments.clear();
+                homeDocuments.addAll(documents);
+                documentAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onError(@NonNull Exception error) {
+                if (!isAdded()) return;
+                Toast.makeText(getContext(), "Lỗi tải dữ liệu: " + error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void openDocumentDetail(@NonNull Document document) {
+        Intent intent = new Intent(getActivity(), DocumentDetailActivity.class);
+        intent.putExtra(DocumentDetailActivity.EXTRA_DOCUMENT, document);
+        startActivity(intent);
+    }
+
+
+}
+>>>>>>> 21ea585 (update button)
