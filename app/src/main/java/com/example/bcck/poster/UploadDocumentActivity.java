@@ -15,33 +15,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.bcck.R;
-<<<<<<< HEAD
-import com.example.bcck.poster.Document;
-=======
->>>>>>> 21ea585 (update button)
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-<<<<<<< HEAD
-
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-=======
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.Locale;
->>>>>>> 21ea585 (update button)
 
 public class UploadDocumentActivity extends AppCompatActivity {
 
@@ -96,11 +77,7 @@ public class UploadDocumentActivity extends AppCompatActivity {
 
         btnUpload.setOnClickListener(v -> {
             if (validateForm()) {
-<<<<<<< HEAD
-                uploadFileToCloudinary();
-=======
                 uploadFileToFirebaseStorage();
->>>>>>> 21ea585 (update button)
             }
         });
     }
@@ -169,77 +146,6 @@ public class UploadDocumentActivity extends AppCompatActivity {
         return true;
     }
 
-<<<<<<< HEAD
-    // ================= CLOUDINARY UPLOAD =================
-
-    private void uploadFileToCloudinary() {
-
-        Toast.makeText(this, "Đang tải lên file...", Toast.LENGTH_SHORT).show();
-
-        new Thread(() -> {
-            try {
-                InputStream inputStream =
-                        getContentResolver().openInputStream(selectedFileUri);
-
-                ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-                byte[] data = new byte[4096];
-                int nRead;
-
-                while ((nRead = inputStream.read(data)) != -1) {
-                    buffer.write(data, 0, nRead);
-                }
-
-                inputStream.close(); // 🔥 RẤT QUAN TRỌNG
-
-                byte[] fileBytes = buffer.toByteArray();
-
-                String mimeType = getContentResolver().getType(selectedFileUri);
-                if (mimeType == null) mimeType = "application/octet-stream";
-
-                String cloudName = "djnddcxhq";
-                String uploadPreset = "unsigned_preset";
-                String uploadUrl =
-                        "https://api.cloudinary.com/v1_1/" + cloudName + "/raw/upload";
-
-                OkHttpClient client = new OkHttpClient();
-
-                RequestBody requestBody = new MultipartBody.Builder()
-                        .setType(MultipartBody.FORM)
-                        .addFormDataPart(
-                                "file",
-                                selectedFileName,
-                                RequestBody.create(fileBytes, MediaType.parse(mimeType))
-                        )
-                        .addFormDataPart("upload_preset", uploadPreset)
-                        .build();
-
-                Request request = new Request.Builder()
-                        .url(uploadUrl)
-                        .post(requestBody)
-                        .build();
-
-                Response response = client.newCall(request).execute();
-
-                if (response.isSuccessful()) {
-                    String responseData = response.body().string();
-                    JSONObject json = new JSONObject(responseData);
-                    String fileUrl = json.getString("secure_url");
-
-                    runOnUiThread(() -> saveDocumentInfoToFirestore(fileUrl));
-
-                } else {
-                    runOnUiThread(() ->
-                            Toast.makeText(this, "Upload Cloudinary thất bại!", Toast.LENGTH_LONG).show()
-                    );
-                }
-
-            } catch (Exception e) {
-                runOnUiThread(() ->
-                        Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_LONG).show()
-                );
-            }
-        }).start();
-=======
     // ================= FIREBASE STORAGE UPLOAD =================
 
     private void uploadFileToFirebaseStorage() {
@@ -279,7 +185,6 @@ public class UploadDocumentActivity extends AppCompatActivity {
             safe += ".pdf";
         }
         return safe;
->>>>>>> 21ea585 (update button)
     }
 
     // ================= FIRESTORE =================

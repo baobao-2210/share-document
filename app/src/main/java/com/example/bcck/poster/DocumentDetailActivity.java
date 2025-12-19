@@ -1,33 +1,16 @@
 package com.example.bcck.poster;
 
-<<<<<<< HEAD
-import android.app.DownloadManager;
-=======
->>>>>>> 21ea585 (update button)
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-<<<<<<< HEAD
-import android.view.View;
-import android.webkit.WebView;
-=======
->>>>>>> 21ea585 (update button)
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
 
-<<<<<<< HEAD
-import com.example.bcck.Chat.ChatActivity;
-import com.example.bcck.Chat.ChatDetailActivity;
-import com.example.bcck.Chat.ChatFragment;
-import com.example.bcck.R;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-
-=======
 import com.example.bcck.Chat.ChatDetailActivity;
 import com.example.bcck.R;
 import com.google.firebase.storage.FirebaseStorage;
@@ -36,13 +19,10 @@ import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
->>>>>>> 21ea585 (update button)
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-<<<<<<< HEAD
-=======
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -50,7 +30,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
->>>>>>> 21ea585 (update button)
 public class DocumentDetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_DOCUMENT = "DOCUMENT_DETAIL";
@@ -143,44 +122,8 @@ public class DocumentDetailActivity extends AppCompatActivity {
             return;
         }
 
-<<<<<<< HEAD
-        // ✅ FIX CLOUDINARY LINK
-        String downloadUrl = document.getFileUrl()
-                .replace("/raw/upload/", "/raw/upload/fl_attachment/");
-
-        Uri uri = Uri.parse(downloadUrl);
-
-        String fileName = document.getTitle();
-        if (!fileName.toLowerCase().endsWith(".pdf")) {
-            fileName += ".pdf";
-        }
-
-        DownloadManager.Request request = new DownloadManager.Request(uri);
-        request.setTitle(fileName);
-        request.setDescription("Đang tải tài liệu...");
-        request.setNotificationVisibility(
-                DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED
-        );
-
-        request.setMimeType("application/pdf");
-        request.allowScanningByMediaScanner();
-
-        request.setDestinationInExternalPublicDir(
-                Environment.DIRECTORY_DOWNLOADS,
-                fileName
-        );
-
-        DownloadManager manager =
-                (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-
-        if (manager != null) {
-            manager.enqueue(request);
-            Toast.makeText(this, "Đang tải xuống...", Toast.LENGTH_SHORT).show();
-        }
-=======
         String fileName = buildSafeFileName(document.getTitle());
         downloadFromFirebaseToAppDownloads(document.getFileUrl(), fileName, true);
->>>>>>> 21ea585 (update button)
     }
 
 
@@ -200,24 +143,8 @@ public class DocumentDetailActivity extends AppCompatActivity {
             return;
         }
 
-<<<<<<< HEAD
-        // Google PDF Viewer
-        String googleViewerUrl =
-                "https://drive.google.com/viewerng/viewer?embedded=true&url="
-                        + document.getFileUrl();
-
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(googleViewerUrl));
-
-        try {
-            startActivity(intent);
-        } catch (Exception e) {
-            Toast.makeText(this, "Không thể xem trước file PDF", Toast.LENGTH_SHORT).show();
-        }
-=======
         String fileName = buildSafeFileName(document.getTitle());
         downloadFromFirebaseToCacheAndPreview(document.getFileUrl(), fileName);
->>>>>>> 21ea585 (update button)
     }
 
 
@@ -247,9 +174,6 @@ public class DocumentDetailActivity extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
-}
-=======
     private String buildSafeFileName(String title) {
         String safe = (title == null || title.trim().isEmpty()) ? "document" : title.trim();
         safe = safe.replaceAll("[\\\\/:*?\"<>|\\n\\r\\t]", "_");
@@ -417,4 +341,3 @@ public class DocumentDetailActivity extends AppCompatActivity {
         });
     }
 }
->>>>>>> 21ea585 (update button)

@@ -1,6 +1,7 @@
 package com.example.bcck.Home;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,14 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-<<<<<<< HEAD
-
-import com.example.bcck.R;
-=======
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,8 +28,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.content.pm.ApplicationInfo;
->>>>>>> 21ea585 (update button)
 
 public class HomeFragment extends Fragment {
 
@@ -41,17 +37,12 @@ public class HomeFragment extends Fragment {
     // Filter Buttons
     private Button btnAll, btnPopular, btnNewest;
 
-<<<<<<< HEAD
-    // PDF Items
-    private CardView pdfItem1, pdfItem2, pdfItem3;
-=======
     private RecyclerView recyclerViewHomeDocuments;
     private DocumentAdapter documentAdapter;
     private final List<Document> homeDocuments = new ArrayList<>();
     private ImageView addIcon;
 
     private final FirestoreDocumentRepository documentRepository = new FirestoreDocumentRepository();
->>>>>>> 21ea585 (update button)
 
     @Nullable
     @Override
@@ -72,13 +63,9 @@ public class HomeFragment extends Fragment {
         // Các hàm setup có sẵn
         setupCloudStorageCards();
         setupFilterButtons();
-<<<<<<< HEAD
-        setupPdfItems();
-=======
         setupRecyclerView();
         setupSeedButton();
         loadTopDocuments(DocumentSort.ALL);
->>>>>>> 21ea585 (update button)
 
         return view;
     }
@@ -95,15 +82,8 @@ public class HomeFragment extends Fragment {
         btnPopular = view.findViewById(R.id.btnPopular);
         btnNewest = view.findViewById(R.id.btnNewest);
 
-<<<<<<< HEAD
-        // PDF Items
-        pdfItem1 = view.findViewById(R.id.pdfItem1);
-        pdfItem2 = view.findViewById(R.id.pdfItem2);
-        pdfItem3 = view.findViewById(R.id.pdfItem3);
-=======
         addIcon = view.findViewById(R.id.addIcon);
         recyclerViewHomeDocuments = view.findViewById(R.id.recyclerViewHomeDocuments);
->>>>>>> 21ea585 (update button)
     }
 
     private void setupCloudStorageCards() {
@@ -137,33 +117,21 @@ public class HomeFragment extends Fragment {
         btnAll.setOnClickListener(v -> {
             selectFilterButton(btnAll);
             Toast.makeText(getContext(), "Hiển thị tất cả tài liệu", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-            // TODO: Load all documents
-=======
             loadTopDocuments(DocumentSort.ALL);
->>>>>>> 21ea585 (update button)
         });
 
         // Button Phổ Biến
         btnPopular.setOnClickListener(v -> {
             selectFilterButton(btnPopular);
             Toast.makeText(getContext(), "Hiển thị tài liệu phổ biến", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-            // TODO: Load popular documents
-=======
             loadTopDocuments(DocumentSort.POPULAR);
->>>>>>> 21ea585 (update button)
         });
 
         // Button Mới Nhất
         btnNewest.setOnClickListener(v -> {
             selectFilterButton(btnNewest);
             Toast.makeText(getContext(), "Hiển thị tài liệu mới nhất", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
-            // TODO: Load newest documents
-=======
             loadTopDocuments(DocumentSort.NEWEST);
->>>>>>> 21ea585 (update button)
         });
     }
 
@@ -183,46 +151,6 @@ public class HomeFragment extends Fragment {
         selectedButton.setTextColor(0xFFFFFFFF);
     }
 
-<<<<<<< HEAD
-    private void setupPdfItems() {
-        // PDF Item 1 Click
-        pdfItem1.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Mở: Lập Trình Hướng Đối Tượng Chương I", Toast.LENGTH_SHORT).show();
-            // TODO: Mở PDF viewer hoặc download
-            openPdfDetail("Lập Trình Hướng Đối Tượng Chương I", "156", "29", "4.3");
-        });
-
-        // PDF Item 2 Click
-        pdfItem2.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Mở: Lập trình Điện Thoại Di Động Chương II", Toast.LENGTH_SHORT).show();
-            openPdfDetail("Lập trình Điện Thoại Di Động Chương II", "156", "29", "4.3");
-        });
-
-        // PDF Item 3 Click
-        pdfItem3.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Mở: Lập trình Điện Thoại Di Động Chương III", Toast.LENGTH_SHORT).show();
-            openPdfDetail("Lập trình Điện Thoại Di Động Chương III", "412", "89", "4.9");
-        });
-    }
-
-    private void openPdfDetail(String title, String downloads, String likes, String rating) {
-        // TODO: Chuyển sang PdfDetailActivity hoặc PdfDetailFragment
-        // Intent intent = new Intent(getActivity(), PdfDetailActivity.class);
-        // intent.putExtra("title", title);
-        // intent.putExtra("downloads", downloads);
-        // intent.putExtra("likes", likes);
-        // intent.putExtra("rating", rating);
-        // startActivity(intent);
-
-        Toast.makeText(getContext(),
-                "Tài liệu: " + title + "\n" +
-                        "Downloads: " + downloads + " | Likes: " + likes + " | Rating: " + rating,
-                Toast.LENGTH_LONG).show();
-    }
-
-
-}
-=======
     private void setupRecyclerView() {
         recyclerViewHomeDocuments.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -300,7 +228,4 @@ public class HomeFragment extends Fragment {
         intent.putExtra(DocumentDetailActivity.EXTRA_DOCUMENT, document);
         startActivity(intent);
     }
-
-
 }
->>>>>>> 21ea585 (update button)
