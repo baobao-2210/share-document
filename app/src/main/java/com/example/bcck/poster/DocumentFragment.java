@@ -19,10 +19,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
-
-import com.example.bcck.Home.NotificationActivity;
-import com.example.bcck.HomeActivity;
-import com.example.bcck.Profile.ProfileActivity;
 import com.example.bcck.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,7 +34,7 @@ public class DocumentFragment extends Fragment {
     private List<Document> filteredDocumentList;
 
     private EditText searchBox;
-    private ImageView logoIcon, iconNotification, iconProfile;
+    private ImageView iconNotification, iconProfile;
     private CardView btnUpload;
     private FirebaseFirestore db;
 
@@ -64,7 +60,6 @@ public class DocumentFragment extends Fragment {
         iconNotification = view.findViewById(R.id.iconNotification);
         iconProfile = view.findViewById(R.id.iconProfile);
         btnUpload = view.findViewById(R.id.btnUpload);
-        logoIcon = view.findViewById(R.id.logoIcon);
         db = FirebaseFirestore.getInstance();
 
     }
@@ -124,32 +119,23 @@ public class DocumentFragment extends Fragment {
     }
 
     private void setupButtons() {
-        // 1. Xử lý nút Thông Báo (Bell)
         iconNotification.setOnClickListener(v -> {
-            // Chuyển sang màn hình NotificationActivity
-            // Bạn cần tạo Activity này nếu chưa có (Xem hướng dẫn Bước 1)
-            Intent intent = new Intent(getContext(), NotificationActivity.class);
-            startActivity(intent);
+            Toast.makeText(getContext(), "Thông báo", Toast.LENGTH_SHORT).show();
+            // TODO: Mở màn hình thông báo
         });
 
-        // 2. Xử lý nút Profile (Cá nhân)
         iconProfile.setOnClickListener(v -> {
-            // Cách mới: Chuyển sang Activity Profile riêng biệt -> KHÔNG BAO GIỜ CRASH
-            Intent intent = new Intent(requireContext(), ProfileActivity.class);
-            startActivity(intent);
+            Toast.makeText(getContext(), "Cá nhân", Toast.LENGTH_SHORT).show();
+            // TODO: Chuyển sang tab Cá nhân
         });
 
-        // 3. Xử lý nút Upload (Đã có)
+        // --- Sửa đoạn code này để thêm thao tác chuyển màn hình ---
         btnUpload.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), com.example.bcck.poster.UploadDocumentActivity.class);
+            // Mở Activity Tải lên Tài liệu
+            Intent intent = new Intent(requireContext(), UploadDocumentActivity.class);
             startActivity(intent);
-        });
-        // --- 4. Xử lý nút Logo (Về trang chủ) --
-        logoIcon.setOnClickListener(v -> {
-            // Thay 'MainActivity.class' bằng tên file Activity trang chủ của bạn
-            Intent intent = new Intent(requireContext(), HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+
+            // Chú ý: Bạn cần đảm bảo đã tạo UploadDocumentActivity và nó đã được khai báo trong AndroidManifest.xml
         });
     }
 
