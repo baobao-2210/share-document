@@ -16,6 +16,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import com.example.bcck.HomeActivity;
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import com.example.bcck.R;
 
 import java.util.ArrayList;
@@ -88,8 +98,27 @@ public class ChatFragment extends Fragment {
 
     private void setupButtons() {
         btnBack.setOnClickListener(v -> {
+<<<<<<< HEAD
             if (getActivity() != null) {
                 getActivity().onBackPressed();
+=======
+<<<<<<< HEAD
+            if (getActivity() != null) {
+                getActivity().onBackPressed();
+=======
+<<<<<<< HEAD
+            // Thay 'MainActivity.class' bằng tên file Activity trang chủ của bạn
+            Intent intent = new Intent(getActivity(), HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            if (getActivity() != null) {
+                getActivity().finish();
+=======
+            if (getActivity() != null) {
+                getActivity().onBackPressed();
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
             }
         });
 

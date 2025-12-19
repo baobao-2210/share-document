@@ -1,16 +1,37 @@
 package com.example.bcck.Profile;
 
 import android.content.Intent;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import android.os.Bundle;
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+<<<<<<< HEAD
+=======
+=======
+import android.os.Bundle;
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import android.widget.Toast;
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,27 +39,36 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
+<<<<<<< HEAD
+=======
+=======
+import android.widget.Toast;
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import com.bumptech.glide.Glide;
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
 import com.example.bcck.R;
-import com.example.bcck.HomeActivity;
-// Đảm bảo import đúng file User của bạn
-import com.example.bcck.Profile.User;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions; // Quan trọng để sửa lỗi NOT_FOUND
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import com.example.bcck.library.ThuVienActivity;
 
 public class ProfileFragment extends Fragment {
 
+<<<<<<< HEAD
+    private ImageView btnBack, btnSettings, btnEditAvatar;
+    private ConstraintLayout btnDocuments, btnPosts, btnLibrary, btnDownloadHistory;
+    private ConstraintLayout btnMyDocuments, btnUpdateInfo, btnSecurity;
+=======
     // Khai báo View theo đúng ID trong XML mới
     private ImageView btnBack, btnSettings, btnEditAvatar, imgAvatar;
     private TextView tvName, tvClass, tvDepartment, tvYear, tvEmail, tvTitle;
@@ -60,12 +90,34 @@ public class ProfileFragment extends Fragment {
                     Log.d("Profile", "Không chọn ảnh nào");
                 }
             });
+<<<<<<< HEAD
+=======
+=======
+import com.example.bcck.R;
+import com.example.bcck.library.ThuVienActivity;
+
+public class ProfileFragment extends Fragment {
+
+    private ImageView btnBack, btnSettings, btnEditAvatar;
+    private ConstraintLayout btnDocuments, btnPosts, btnLibrary, btnDownloadHistory;
+    private ConstraintLayout btnMyDocuments, btnUpdateInfo, btnSecurity;
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        // Lấy nút từ layout fragment
+        ConstraintLayout btnLibrary = view.findViewById(R.id.btnLibrary);
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         // 1. Khởi tạo Firebase
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -77,25 +129,24 @@ public class ProfileFragment extends Fragment {
         // 2. Ánh xạ và cài đặt nút bấm
         initViews(view);
         setupButtons();
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
 
+        // Xử lý khi nhấn nút
+        btnLibrary.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ThuVienActivity.class);
+            startActivity(intent);
+        });
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        // Load lại dữ liệu mỗi khi màn hình hiện lên
-        getUserProfile();
-    }
 
     private void initViews(View view) {
-        // Ánh xạ Header & Avatar
         btnBack = view.findViewById(R.id.btnBack);
         btnSettings = view.findViewById(R.id.btnSettings);
-        imgAvatar = view.findViewById(R.id.imgAvatar);
         btnEditAvatar = view.findViewById(R.id.btnEditAvatar);
-        progressBarAvatar = view.findViewById(R.id.progressBarAvatar); // Vòng tròn loading
 
+<<<<<<< HEAD
+=======
         // Ánh xạ Thông tin User
         tvName = view.findViewById(R.id.tvName);
         tvClass = view.findViewById(R.id.tvClass);
@@ -104,38 +155,76 @@ public class ProfileFragment extends Fragment {
         tvEmail = view.findViewById(R.id.tvEmail);
 
         // Ánh xạ Menu Card 1 (Tài liệu, Bài đăng...)
+<<<<<<< HEAD
+=======
+=======
+        // Lấy nút từ layout fragment
+        ConstraintLayout btnLibrary = view.findViewById(R.id.btnLibrary);
+
+        // Xử lý khi nhấn nút
+        btnLibrary.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ThuVienActivity.class);
+            startActivity(intent);
+        });
+        return view;
+    }
+
+
+    private void initViews(View view) {
+        btnBack = view.findViewById(R.id.btnBack);
+        btnSettings = view.findViewById(R.id.btnSettings);
+        btnEditAvatar = view.findViewById(R.id.btnEditAvatar);
+
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         btnDocuments = view.findViewById(R.id.btnDocuments);
         btnPosts = view.findViewById(R.id.btnPosts);
         btnLibrary = view.findViewById(R.id.btnLibrary);
         btnDownloadHistory = view.findViewById(R.id.btnDownloadHistory);
         btnMyDocuments = view.findViewById(R.id.btnMyDocuments);
+<<<<<<< HEAD
 
         // Ánh xạ Menu Card 2 (Cập nhật, Bảo mật)
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+        // Ánh xạ Menu Card 2 (Cập nhật, Bảo mật)
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         btnUpdateInfo = view.findViewById(R.id.btnUpdateInfo);
         btnSecurity = view.findViewById(R.id.btnSecurity);
     }
 
     private void setupButtons() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         // Nút Back -> Về Home
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         btnBack.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
+            if (getActivity() != null) {
+                getActivity().onBackPressed();
+            }
         });
 
-        // Nút Cập nhật thông tin -> Mở màn hình Edit
-        btnUpdateInfo.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), EditProfileActivity.class);
-            startActivity(intent);
+        btnSettings.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Cài đặt", Toast.LENGTH_SHORT).show();
         });
 
-        // Nút Camera -> Mở thư viện chọn ảnh
         btnEditAvatar.setOnClickListener(v -> {
-            pickMedia.launch(new PickVisualMediaRequest.Builder()
-                    .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
-                    .build());
+            Toast.makeText(getContext(), "Chỉnh sửa ảnh đại diện", Toast.LENGTH_SHORT).show();
+            // TODO: Mở gallery để chọn ảnh
         });
 
+<<<<<<< HEAD
         // Các nút khác (Demo Toast)
         btnDocuments.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), com.example.bcck.library.ThuVienActivity.class);
@@ -165,29 +254,37 @@ public class ProfileFragment extends Fragment {
 
         btnSettings.setOnClickListener(v -> Toast.makeText(getContext(), "Cài đặt", Toast.LENGTH_SHORT).show());
     }
+=======
+        btnDocuments.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Tài liệu", Toast.LENGTH_SHORT).show();
+        });
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 
-    // --- HÀM XỬ LÝ ẢNH BASE64 (MIỄN PHÍ - KHÔNG CẦN STORAGE) ---
-    private void xuLyVaLuuAnh(Uri imageUri) {
-        if (currentUserId == null) return;
+        btnPosts.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Bài đăng", Toast.LENGTH_SHORT).show();
+        });
 
-        // Hiện loading
-        progressBarAvatar.setVisibility(View.VISIBLE);
-        Toast.makeText(getContext(), "Đang xử lý ảnh...", Toast.LENGTH_SHORT).show();
+        btnLibrary.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Thư viện của tôi", Toast.LENGTH_SHORT).show();
+        });
 
-        try {
-            // 1. Chuyển Uri thành Bitmap
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireContext().getContentResolver(), imageUri);
+        btnDownloadHistory.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Lịch sử tải xuống", Toast.LENGTH_SHORT).show();
+        });
 
-            // 2. Thu nhỏ ảnh (QUAN TRỌNG: Để không bị lỗi quá giới hạn 1MB của Firestore)
-            // Giảm kích thước xuống tối đa 500px
-            Bitmap scaledBitmap = scaleDown(bitmap, 500, true);
+        btnMyDocuments.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Tài liệu của tôi", Toast.LENGTH_SHORT).show();
+        });
 
-            // 3. Nén thành chuỗi String (Base64)
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 70, baos); // Chất lượng 70%
-            byte[] imageBytes = baos.toByteArray();
-            String base64String = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        btnUpdateInfo.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Cập nhật thông tin", Toast.LENGTH_SHORT).show();
+        });
 
+<<<<<<< HEAD
+        btnSecurity.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Bảo mật và quyền riêng tư", Toast.LENGTH_SHORT).show();
+        });
+=======
             // 4. Lưu vào Firestore
             Map<String, Object> data = new HashMap<>();
             data.put("avatarUrl", base64String);
@@ -277,5 +374,53 @@ public class ProfileFragment extends Fragment {
                 }
             }
         }
+<<<<<<< HEAD
+=======
+=======
+        btnBack.setOnClickListener(v -> {
+            if (getActivity() != null) {
+                getActivity().onBackPressed();
+            }
+        });
+
+        btnSettings.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Cài đặt", Toast.LENGTH_SHORT).show();
+        });
+
+        btnEditAvatar.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Chỉnh sửa ảnh đại diện", Toast.LENGTH_SHORT).show();
+            // TODO: Mở gallery để chọn ảnh
+        });
+
+        btnDocuments.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Tài liệu", Toast.LENGTH_SHORT).show();
+        });
+
+        btnPosts.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Bài đăng", Toast.LENGTH_SHORT).show();
+        });
+
+        btnLibrary.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Thư viện của tôi", Toast.LENGTH_SHORT).show();
+        });
+
+        btnDownloadHistory.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Lịch sử tải xuống", Toast.LENGTH_SHORT).show();
+        });
+
+        btnMyDocuments.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Tài liệu của tôi", Toast.LENGTH_SHORT).show();
+        });
+
+        btnUpdateInfo.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Cập nhật thông tin", Toast.LENGTH_SHORT).show();
+        });
+
+        btnSecurity.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Bảo mật và quyền riêng tư", Toast.LENGTH_SHORT).show();
+        });
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
     }
 }

@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+=======
+<<<<<<< HEAD
+    <uses-permission android:name="android.permission.INTERNET" />
+=======
+<<<<<<< HEAD
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+=======
+    <uses-permission android:name="android.permission.INTERNET" />
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +28,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BCCK">
         <activity
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            android:name=".RegisterActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
             android:name=".Profile.ProfileActivity"
             android:exported="false" />
         <activity
@@ -23,21 +46,56 @@
             android:name=".RegisterActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+<<<<<<< HEAD
+=======
+=======
+            android:name=".RegisterActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".HomeActivity" />
+=======
+<<<<<<< HEAD
+        <activity android:name=".HomeActivity"  >
+        </activity>
+=======
+<<<<<<< HEAD
+        <activity android:name=".HomeActivity" />
+=======
+        <activity android:name=".HomeActivity"  >
+        </activity>
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         <activity android:name=".Chat.ChatActivity" />
         <activity android:name=".Chat.ChatDetailActivity" />
         <activity android:name=".Home.NotificationActivity" />
         <activity android:name=".library.ThuVienActivity" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <activity android:name=".poster.UploadDocumentActivity"/>
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         <activity android:name=".poster.UploadDocumentActivity" />
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         <activity android:name=".poster.DocumentDetailActivity" />
+<<<<<<< HEAD
         <activity android:name=".poster.PdfPreviewActivity" />
         <activity android:name=".Profile.EditProfileActivity" />
+=======
+
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
     </application>
 
 </manifest>

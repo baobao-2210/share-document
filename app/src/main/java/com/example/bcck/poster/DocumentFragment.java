@@ -19,10 +19,22 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 
 import com.example.bcck.Home.NotificationActivity;
 import com.example.bcck.HomeActivity;
 import com.example.bcck.Profile.ProfileActivity;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
 import com.example.bcck.R;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,7 +50,19 @@ public class DocumentFragment extends Fragment {
     private List<Document> filteredDocumentList;
 
     private EditText searchBox;
+<<<<<<< HEAD
     private ImageView logoIcon, iconNotification, iconProfile;
+=======
+<<<<<<< HEAD
+    private ImageView iconNotification, iconProfile;
+=======
+<<<<<<< HEAD
+    private ImageView logoIcon, iconNotification, iconProfile;
+=======
+    private ImageView iconNotification, iconProfile;
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
     private CardView btnUpload;
     private FirebaseFirestore db;
 
@@ -64,7 +88,17 @@ public class DocumentFragment extends Fragment {
         iconNotification = view.findViewById(R.id.iconNotification);
         iconProfile = view.findViewById(R.id.iconProfile);
         btnUpload = view.findViewById(R.id.btnUpload);
+<<<<<<< HEAD
         logoIcon = view.findViewById(R.id.logoIcon);
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        logoIcon = view.findViewById(R.id.logoIcon);
+=======
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         db = FirebaseFirestore.getInstance();
 
     }
@@ -124,32 +158,56 @@ public class DocumentFragment extends Fragment {
     }
 
     private void setupButtons() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         // 1. Xử lý nút Thông Báo (Bell)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
         iconNotification.setOnClickListener(v -> {
-            // Chuyển sang màn hình NotificationActivity
-            // Bạn cần tạo Activity này nếu chưa có (Xem hướng dẫn Bước 1)
-            Intent intent = new Intent(getContext(), NotificationActivity.class);
-            startActivity(intent);
+            Toast.makeText(getContext(), "Thông báo", Toast.LENGTH_SHORT).show();
+            // TODO: Mở màn hình thông báo
         });
 
-        // 2. Xử lý nút Profile (Cá nhân)
         iconProfile.setOnClickListener(v -> {
-            // Cách mới: Chuyển sang Activity Profile riêng biệt -> KHÔNG BAO GIỜ CRASH
-            Intent intent = new Intent(requireContext(), ProfileActivity.class);
-            startActivity(intent);
+            Toast.makeText(getContext(), "Cá nhân", Toast.LENGTH_SHORT).show();
+            // TODO: Chuyển sang tab Cá nhân
         });
 
-        // 3. Xử lý nút Upload (Đã có)
+        // --- Sửa đoạn code này để thêm thao tác chuyển màn hình ---
         btnUpload.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), com.example.bcck.poster.UploadDocumentActivity.class);
+            // Mở Activity Tải lên Tài liệu
+            Intent intent = new Intent(requireContext(), UploadDocumentActivity.class);
             startActivity(intent);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+            // Chú ý: Bạn cần đảm bảo đã tạo UploadDocumentActivity và nó đã được khai báo trong AndroidManifest.xml
+=======
+=======
+        iconNotification.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Thông báo", Toast.LENGTH_SHORT).show();
+            // TODO: Mở màn hình thông báo
         });
-        // --- 4. Xử lý nút Logo (Về trang chủ) --
-        logoIcon.setOnClickListener(v -> {
-            // Thay 'MainActivity.class' bằng tên file Activity trang chủ của bạn
-            Intent intent = new Intent(requireContext(), HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+
+        iconProfile.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "Cá nhân", Toast.LENGTH_SHORT).show();
+            // TODO: Chuyển sang tab Cá nhân
+        });
+
+        // --- Sửa đoạn code này để thêm thao tác chuyển màn hình ---
+        btnUpload.setOnClickListener(v -> {
+            // Mở Activity Tải lên Tài liệu
+            Intent intent = new Intent(requireContext(), UploadDocumentActivity.class);
             startActivity(intent);
+
+            // Chú ý: Bạn cần đảm bảo đã tạo UploadDocumentActivity và nó đã được khai báo trong AndroidManifest.xml
+>>>>>>> 21ea585 (update button)
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         });
     }
 

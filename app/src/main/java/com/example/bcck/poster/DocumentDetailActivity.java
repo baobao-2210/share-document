@@ -56,7 +56,6 @@ public class DocumentDetailActivity extends AppCompatActivity {
             TextView tvDownloads = findViewById(R.id.tvDownloads);
             TextView tvRating = findViewById(R.id.tvRating);
 
-            // Tham chiếu các nút thao tác
             Button btnDownload = findViewById(R.id.btnDownload);
             Button btnShare = findViewById(R.id.btnShare);
             Button btnPreview = findViewById(R.id.btnPreview);
@@ -122,6 +121,48 @@ public class DocumentDetailActivity extends AppCompatActivity {
             return;
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        // Fix Cloudinary download
+=======
+<<<<<<< HEAD
+        // ✅ FIX CLOUDINARY LINK
+>>>>>>> 764e31a0499ea9fc9ebef8490cc31b8688c58892
+        String downloadUrl = document.getFileUrl()
+                .replace("/raw/upload/", "/raw/upload/fl_attachment/");
+
+        Uri uri = Uri.parse(downloadUrl);
+
+        // ✅ LẤY TÊN FILE GỐC TỪ URL
+        String fileName = uri.getLastPathSegment();
+
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+        request.setTitle(fileName);
+        request.setDescription("Đang tải tài liệu...");
+        request.setNotificationVisibility(
+                DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED
+        );
+
+        // ✅ KHÔNG ÉP MIME TYPE
+        request.setMimeType(null);
+
+        request.allowScanningByMediaScanner();
+
+        request.setDestinationInExternalPublicDir(
+                Environment.DIRECTORY_DOWNLOADS,
+                fileName
+        );
+
+        DownloadManager manager =
+                (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+
+        if (manager != null) {
+            manager.enqueue(request);
+            Toast.makeText(this, "Đang tải xuống...", Toast.LENGTH_SHORT).show();
+        }
+=======
+>>>>>>> 602d07c9f229f76660daa22c1f0a5b42902b6642
         String fileName = buildSafeFileName(document.getTitle());
         downloadFromFirebaseToAppDownloads(document.getFileUrl(), fileName, true);
     }
@@ -156,7 +197,6 @@ public class DocumentDetailActivity extends AppCompatActivity {
         String receiverId = document.getUploaderId();
         // Kiểm tra dữ liệu và khởi chạy Activity
         if (receiverName != null && !receiverName.isEmpty() && receiverId != null && !receiverId.isEmpty()) {
-
             // 1. Tạo Intent
             // CHÚ Ý: Đảm bảo đã import com.example.bcck.chat.ChatActivity;
             Intent intent = new Intent(this, ChatDetailActivity.class);

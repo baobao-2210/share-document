@@ -20,7 +20,6 @@ public class RegisterActivity extends AppCompatActivity {
     private MaterialButton btnSubmitDangNhap;
 
     private boolean isSinhVien = true;
-
     // Firebase Auth
     private FirebaseAuth mAuth;
 
@@ -46,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         btnSubmitDangNhap = findViewById(R.id.btnSubmitDangNhap);
     }
-
     private void setupInitialState() {
         btnSubmitDangNhap.setText("Đăng Nhập");
     }
